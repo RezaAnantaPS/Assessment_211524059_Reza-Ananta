@@ -1,0 +1,104 @@
+GET http://localhost:5000/barang
+###
+GET http://localhost:5000/barang/BRG21152405901
+###
+POST http://localhost:5000/barang
+Content-Type: application/json
+
+{
+    "KodeBarang": "BRG21152405901",
+    "NamaBarang": "Indomie Rasa Reza",
+    "Satuan": "Bungkus",
+    "HargaSatuan": 3000,
+    "Stok": 50
+}
+###
+PATCH  http://localhost:5000/barang/BRG21152405901
+Content-Type: application/json
+
+{
+    "HargaSatuan": 4000
+}
+
+###
+DELETE   http://localhost:5000/barang/BRG21152405901
+
+
+###
+GET http://localhost:5000/kasir
+###
+GET http://localhost:5000/kasir/KS21152405901
+###
+POST http://localhost:5000/kasir
+Content-Type: application/json
+
+{
+    "KodeKasir": "KS21152405901",
+    "Nama": "Ani Reza",
+    "HP": "08211524059375"
+}
+###
+PATCH  http://localhost:5000/kasir/KS21152405901
+Content-Type: application/json
+
+{
+    "Nama": "Ani Ananta"
+}
+
+###
+DELETE   http://localhost:5000/kasir/KS21152405901
+
+
+###
+GET http://localhost:5000/tenan
+###
+GET http://localhost:5000/tenan/TK21152405901
+###
+POST http://localhost:5000/tenan
+Content-Type: application/json
+
+{
+    "KodeTenan": "TK21152405901",
+    "NamaTenan": "Rezamaret",
+    "HP": "08211524059375"
+}
+###
+PATCH  http://localhost:5000/tenan/TK21152405901
+Content-Type: application/json
+
+{
+    "NamaTenan": "Anantamaret"
+}
+
+###
+DELETE   http://localhost:5000/tenan/TK21152405901
+
+
+###
+GET http://localhost:5000/nota
+###
+GET http://localhost:5000/nota/NO21152405901
+###
+POST http://localhost:5000/nota
+Content-Type: application/json
+
+{
+    "KodeNota": "NO21152405901",
+    "KodeTenan": "TK21152405901",
+    "KodeKasir": "KS21152405901",
+    "TglNota": "2023-11-25T09:30:00Z",
+    "JamNota": "2023-11-25T10:35:00Z",
+    "JumlahBelanja": 100000,
+    "Diskon": 2,
+    "Total": 98000
+}
+###
+PATCH  http://localhost:5000/nota/NO21152405901
+Content-Type: application/json
+
+{
+    "JamNota": "2023-11-25T10:36:00Z"
+}
+
+###
+DELETE   http://localhost:5000/tenan/TK21152405901
