@@ -7,10 +7,21 @@ Content-Type: application/json
 
 {
     "KodeBarang": "BRG21152405901",
-    "NamaBarang": "Indomie Rasa Reza",
-    "Satuan": "Bungkus",
-    "HargaSatuan": 3000,
-    "Stok": 50
+    "NamaBarang": "Indomie Reza",
+    "Satuan": "Pcs",
+    "HargaSatuan": 5000,
+    "Stok": 100
+}
+###
+POST http://localhost:5000/barang
+Content-Type: application/json
+
+{
+    "KodeBarang": "BRG21152405902",
+    "NamaBarang": "Susu Ultra Reza",
+    "Satuan": "Pcs",
+    "HargaSatuan": 5000,
+    "Stok": 100
 }
 ###
 PATCH  http://localhost:5000/barang/BRG21152405901
@@ -21,7 +32,7 @@ Content-Type: application/json
 }
 
 ###
-DELETE   http://localhost:5000/barang/BRG21152405901
+DELETE   http://localhost:5000/barang/BRG21152405902
 
 
 ###
@@ -38,11 +49,20 @@ Content-Type: application/json
     "HP": "08211524059375"
 }
 ###
-PATCH  http://localhost:5000/kasir/KS21152405901
+POST http://localhost:5000/kasir
 Content-Type: application/json
 
 {
-    "Nama": "Ani Ananta"
+    "KodeKasir": "KS21152405902",
+    "Nama": "Budi Reza",
+    "HP": "08211524059444"
+}
+###
+PATCH  http://localhost:5000/kasir/KS21152405902
+Content-Type: application/json
+
+{
+    "HP": "08211524059444"
 }
 
 ###
@@ -63,15 +83,26 @@ Content-Type: application/json
     "HP": "08211524059375"
 }
 ###
-PATCH  http://localhost:5000/tenan/TK21152405901
+POST http://localhost:5000/tenan
 Content-Type: application/json
 
 {
-    "NamaTenan": "Anantamaret"
+    "KodeTenan": "TK21152405902",
+    "NamaTenan": "Anantamaret",
+    "HP": "08211524059375"
+}
+###
+PATCH  http://localhost:5000/tenan/TK21152405902
+Content-Type: application/json
+
+{
+    "NamaTenan": "Rezamart",
+    "HP": "08211524059444"
+
 }
 
 ###
-DELETE   http://localhost:5000/tenan/TK21152405901
+DELETE   http://localhost:5000/tenan/TK21152405902
 
 
 ###
@@ -83,9 +114,9 @@ POST http://localhost:5000/nota
 Content-Type: application/json
 
 {
-    "KodeNota": "NO21152405901",
-    "KodeTenan": "TK21152405901",
-    "KodeKasir": "KS21152405901",
+    "KodeNota": "NO21152405902",
+    "KodeTenan": "TK21152405902",
+    "KodeKasir": "KS21152405902",
     "TglNota": "2023-11-25T09:30:00Z",
     "JamNota": "2023-11-25T10:35:00Z",
     "JumlahBelanja": 100000,
@@ -101,4 +132,64 @@ Content-Type: application/json
 }
 
 ###
-DELETE   http://localhost:5000/tenan/TK21152405901
+DELETE   http://localhost:5000/nota/NO21152405901
+
+
+###
+GET http://localhost:5000/barangnota
+###
+GET http://localhost:5000/barangnota/1
+###
+POST http://localhost:5000/barangnota
+Content-Type: application/json
+
+{
+    "KodeNota": "NO21152405901",
+    "KodeBarang": "BRG21152405901",
+    "JumlahBarang": 10,
+    "HargaSatuan": 3000,
+    "Jumlah": 30000
+}
+###
+POST http://localhost:5000/barangnota
+Content-Type: application/json
+
+{
+    "KodeNota": "NO21152405901",
+    "KodeBarang": "BRG21152405902",
+    "JumlahBarang": 14,
+    "HargaSatuan": 5000,
+    "Jumlah": 70000
+}
+###
+POST http://localhost:5000/barangnota
+Content-Type: application/json
+
+{
+    "KodeNota": "NO21152405902",
+    "KodeBarang": "BRG21152405901",
+    "JumlahBarang": 10,
+    "HargaSatuan": 3000,
+    "Jumlah": 30000
+}
+###
+POST http://localhost:5000/barangnota
+Content-Type: application/json
+
+{
+    "KodeNota": "NO21152405901",
+    "KodeBarang": "BRG21152405902",
+    "JumlahBarang": 4,
+    "HargaSatuan": 5000,
+    "Jumlah": 20000
+}
+###
+PATCH  http://localhost:5000/barangnota/1
+Content-Type: application/json
+
+{
+    "JumlahBarang": 12
+}
+
+###
+DELETE   http://localhost:5000/nota/NO21152405901
